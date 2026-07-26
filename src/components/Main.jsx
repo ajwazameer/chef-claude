@@ -1,9 +1,9 @@
 import { useState } from "react";
 export default function Main() {
   const [ingredients, setIngredients] = useState([
-    "Chicken",
-    "Oregano",
-    "Tomatoes",
+    // "Chicken",
+    // "Oregano",
+    // "Tomatoes",
   ]);
   const ingrdientList = ingredients.map((ingr, index) => {
     return <li key={index}>{ingr}</li>;
@@ -25,17 +25,21 @@ export default function Main() {
         />
         <button>+ Add ingredients</button>
       </form>
-      <section className="ingr-section">
-        <h1>Ingredients on hand:</h1>
-        <ul className="ingr-list">{ingrdientList}</ul>
-      </section>
-      <section className="recipe-section">
-        <div className="recipe-div">
-          <h3>Ready for a recipe?</h3>
-          <span>Generate a recipe from your list of ingredients.</span>
-        </div>
-        <button>Get a recipe</button>
-      </section>
+      {ingredients.length > 0 ? (
+        <section>
+          <div className="ingr-section">
+            <h1>Ingredients on hand:</h1>
+            <ul className="ingr-list">{ingrdientList}</ul>
+          </div>
+          <div className="recipe-section">
+            <div className="recipe-div">
+              <h3>Ready for a recipe?</h3>
+              <span>Generate a recipe from your list of ingredients.</span>
+            </div>
+            <button>Get a recipe</button>
+          </div>
+        </section>
+      ) : null}
     </main>
   );
 }
