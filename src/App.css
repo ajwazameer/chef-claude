@@ -128,3 +128,20 @@ form > button {
   padding-bottom: 9px;
   padding-left: 35px;
 }
+
+/* this code was added */
+.suggested-recipe {
+  margin-left: 70px;
+}
+.suggested-recipe-container {
+  color: #475467;
+  line-height: 28px;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.suggested-recipe-container ul li,
+.suggested-recipe-container ol li {
+  margin-bottom: 8px;
+}
+/* end here */
