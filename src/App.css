@@ -1,3 +1,7 @@
+/* main {
+  display: flex;
+  flex-direction: column;
+} */
 header {
   display: flex;
   justify-content: center;
@@ -49,6 +53,72 @@ form > button {
   background-color: #141413;
   font-weight: 500;
 }
-.ingr-list {
-  margin-left: 30px;
+
+.ingr-section {
+  height: fit-content;
+  margin-bottom: 30px;
+  min-width: 150px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ingr-section > h1 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 38px;
+  letter-spacing: 0;
+  color: #141413;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+.ingr-section > ul {
+  gap: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0;
+  color: #475467;
+}
+.recipe-section {
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+  margin-bottom: 30px;
+  min-width: 150px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f0efeb;
+  height: 109px;
+  border-radius: 15px;
+  padding: 5px;
+}
+.recipe-div {
+  display: flex;
+  flex-direction: column;
+}
+.recipe-section > button {
+  background-color: #d17557;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #fafaf8;
+  width: 115px;
+  height: 38px;
+}
+.recipe-div > h3 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #141413;
+}
+.recipe-div > span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #6b7280;
 }
