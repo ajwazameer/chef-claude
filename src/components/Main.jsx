@@ -8,9 +8,7 @@ export default function Main() {
   const ingrdientList = ingredients.map((ingr, index) => {
     return <li key={index}>{ingr}</li>;
   });
-  const onSubmitMessage = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+  const addIngredient = (formData) => {
     let newIngredient = formData.get("ingredient");
     setIngredients((prevList) => {
       return [...prevList, newIngredient];
@@ -18,7 +16,7 @@ export default function Main() {
   };
   return (
     <main>
-      <form onSubmit={onSubmitMessage}>
+      <form action={addIngredient}>
         <input
           type="text"
           aria-label="Add ingredients"
