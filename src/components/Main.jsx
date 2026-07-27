@@ -2,7 +2,7 @@ import { useState } from "react";
 import Ingredient from "./IngredientsList";
 import ClaudeRecipe from "./ClaudeRecipe";
 import IngredientsList from "./IngredientsList";
-import { getRecipeFromMistral } from "../../ai";
+import { getRecipeFromGroq } from "../../ai";
 
 export default function Main() {
   const [ingredients, setIngredients] = useState([]);
@@ -15,7 +15,7 @@ export default function Main() {
   const [recipe, setRecipe] = useState("");
   async function getRecipe() {
     console.log("getting-recipe");
-    const recipeResponse = await getRecipeFromMistral(ingredients);
+    const recipeResponse = await getRecipeFromGroq(ingredients);
     console.log(recipeResponse);
     console.log("above is the recipe");
     setRecipe(recipeResponse);
