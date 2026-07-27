@@ -5,22 +5,22 @@ import IngredientsList from "./IngredientsList";
 import { getRecipeFromMistral } from "../../ai";
 
 export default function Main() {
-  const [ingredients, setIngredients] = useState([
-    "all the main spices",
-    "pasta",
-    "ground beef",
-    "tomato paste",
-  ]);
+  const [ingredients, setIngredients] = useState([]);
   const addIngredient = (formData) => {
     let newIngredient = formData.get("ingredient");
     setIngredients((prevList) => {
       return [...prevList, newIngredient];
     });
   };
-  const [recipeShown, setRecipeShown] = useState(false);
-  const showRecipe = () => {
-    setRecipeShown((prevRecipeShown) => true);
-  };
+  const [recipe, setRecipe] = useState("");
+  async function getRecipe() {
+    console.log("getting-recipe");
+    const recipeResponse = await getRecipeFromMistral(ingredients);
+    console.log(recipeResponse);
+    console.log("above is the recipe");
+    setRecipe(recipeResponse);
+    console.log(`Recipe seted: ${recipe}`);
+  }
   return (
     <>
       <main>
@@ -35,9 +35,9 @@ export default function Main() {
         </form>
       </main>
       {ingredients.length > 0 ? (
-        <IngredientsList ingredients={ingredients} showRecipe={showRecipe} />
+        <IngredientsList ingredients={ingredients} getRecipe={getRecipe} />
       ) : null}
-      {recipeShown && <ClaudeRecipe />}
+      {recipe && <ClaudeRecipe recipe={recipe} />}
     </>
   );
 }
