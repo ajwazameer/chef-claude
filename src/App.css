@@ -30,7 +30,8 @@ form {
   width: 100%;
   gap: 0.75rem;
   height: 38px;
-  margin-top: 100px;
+  margin-top: 70px;
+  padding: 0 1.5rem;
 }
 form > input {
   height: 38px;
